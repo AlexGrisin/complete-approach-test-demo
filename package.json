@@ -10,7 +10,8 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "test-storybook": "test-storybook",
-    "lighthouse": "lhci autorun"
+    "lighthouse": "lhci autorun",
+    "cypress": "cypress run --component"
   },
   "eslintConfig": {
     "extends": [
@@ -66,6 +67,7 @@
     "@storybook/test-runner": "^0.9.4",
     "@storybook/testing-library": "^0.0.13",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "cypress": "^12.7.0",
     "prop-types": "^15.8.1",
     "webpack": "^5.75.0"
   }
