@@ -7,9 +7,7 @@ module.exports = {
       startServerReadyTimeout: 5000,
     },
     upload: {
-      target: "filesystem",
-      outputDir: ".lighthouseci",
-      ignoreDuplicateBuildFailure: true,
+      target: "temporary-public-storage",
     },
     assert: {
       preset: "lighthouse:recommended",
