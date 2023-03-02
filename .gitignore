@@ -24,3 +24,7 @@ yarn-error.log*
 
 # lighthouse
 .lighthouseci
+
+# cypress
+cypress/videos
+cypress/screenshots
