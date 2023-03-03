@@ -13,4 +13,4 @@ jobs:
       - name: Build Storybook
         run: npm run build-storybook --quiet
       - name: Percy Test
-        run: npp run percy-storybook
+        run: npm run percy-storybook
