@@ -4,7 +4,7 @@ import { within, userEvent } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
 
 export default {
-  title: 'Example/LoginForm',
+  title: 'LoginApp/LoginForm',
   component: LoginForm,
 };
 

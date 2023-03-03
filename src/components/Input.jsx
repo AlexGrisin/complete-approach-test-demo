@@ -1,7 +1,10 @@
 import React from 'react';
 
-export const Input = ({ type, value, testId, handleOnChange }) => {
+export const Input = ({ labelName, type, value, testId, handleOnChange }) => {
   return (
-    <input type={type} name="name" value={value} data-testid={testId} onChange={handleOnChange} />
+    <label>
+      {labelName}
+      <input type={type} name="name" value={value} data-testid={testId} onChange={handleOnChange} />
+    </label>
   );
 };

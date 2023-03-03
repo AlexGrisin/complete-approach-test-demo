@@ -26,20 +26,21 @@ export const LoginForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
-        Login:
-        <Input type="text" value={name} testId="login" handleOnChange={handleNameChange} />
-      </label>
+      <Input
+        labelName="Login:"
+        type="text"
+        value={name}
+        testId="login"
+        handleOnChange={handleNameChange}
+      />
       <br />
-      <label>
-        Password:
-        <Input
-          type="password"
-          value={password}
-          testId="password"
-          handleOnChange={handlePasswordChange}
-        />
-      </label>
+      <Input
+        labelName="Password:"
+        type="password"
+        value={password}
+        testId="password"
+        handleOnChange={handlePasswordChange}
+      />
       <br />
       <Input type="submit" value="Submit" testId="submit" />
       <br />

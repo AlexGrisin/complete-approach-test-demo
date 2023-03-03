@@ -3,7 +3,7 @@ import { Input } from '../components/Input';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Input',
+  title: 'LoginApp/Input',
   component: Input,
 };
 
@@ -12,12 +12,14 @@ const Template = args => <Input {...args} />;
 
 export const Text = Template.bind({});
 Text.args = {
+  labelName: 'Login:',
   type: 'text',
   value: 'text',
 };
 
 export const Password = Template.bind({});
 Password.args = {
+  labelName: 'Password:',
   type: 'password',
   value: 'password',
 };
