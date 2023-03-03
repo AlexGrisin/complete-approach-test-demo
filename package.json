@@ -11,7 +11,8 @@
     "build-storybook": "build-storybook -s public",
     "test-storybook": "test-storybook",
     "lighthouse": "lhci autorun",
-    "cypress": "cypress run --component"
+    "cypress": "cypress run --component",
+    "percy": "percy storybook ./storybook-static"
   },
   "eslintConfig": {
     "extends": [
@@ -47,6 +48,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "dotenv": "^16.0.3",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-scripts": "5.0.1",
@@ -54,6 +56,8 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@percy/cli": "^1.20.2",
+    "@percy/storybook": "^4.3.5",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
