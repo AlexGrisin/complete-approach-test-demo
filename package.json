@@ -7,12 +7,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
-    "test-storybook": "test-storybook",
-    "lighthouse": "lhci autorun",
     "cypress": "cypress run --component",
-    "percy-storybook": "percy storybook ./storybook-static"
+    "lighthouse": "lhci autorun",
+    "storybook": "start-storybook -p 6006 -s public",
+    "storybook-build": "build-storybook -s public",
+    "storybook-test": "test-storybook",
+    "storybook-visual": "percy storybook ./storybook-static"
   },
   "eslintConfig": {
     "extends": [
