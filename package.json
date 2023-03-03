@@ -12,7 +12,7 @@
     "test-storybook": "test-storybook",
     "lighthouse": "lhci autorun",
     "cypress": "cypress run --component",
-    "percy": "percy storybook ./storybook-static"
+    "percy-storybook": "percy storybook ./storybook-static"
   },
   "eslintConfig": {
     "extends": [
