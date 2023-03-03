@@ -1,0 +1,11 @@
+.text-field {
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  display: inline-block;
+}
+.text-field--success {
+  color: green;
+}
+.text-field--error {
+  color: rgb(198, 6, 6);
+}

@@ -1,4 +1,4 @@
-name: "Lighthouse Audit"
+name: 'Lighthouse Audit'
 on: [push]
 jobs:
   lighthouse-audit:

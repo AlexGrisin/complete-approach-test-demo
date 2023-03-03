@@ -1,4 +1,4 @@
-const { injectAxe, checkA11y } = require("axe-playwright");
+const { injectAxe, checkA11y } = require('axe-playwright');
 
 /*
  * See https://storybook.js.org/docs/react/writing-tests/test-runner#test-hook-api-experimental
@@ -9,7 +9,7 @@ module.exports = {
     await injectAxe(page);
   },
   async postRender(page) {
-    await checkA11y(page, "#root", {
+    await checkA11y(page, '#root', {
       detailedReport: true,
       detailedReportOptions: {
         html: true,
