@@ -1,7 +1,7 @@
 .input-label {
   width: 250px;
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  display: inline-block;
+  display: block;
 }
 
 input[type=text], [type=password] {

@@ -33,7 +33,6 @@ export const LoginForm = () => {
         testId="login"
         handleOnChange={handleNameChange}
       />
-      <br />
       <Input
         labelName="Password:"
         type="password"
@@ -41,9 +40,7 @@ export const LoginForm = () => {
         testId="password"
         handleOnChange={handlePasswordChange}
       />
-      <br />
       <Input type="submit" value="Submit" testId="submit" />
-      <br />
       <TextField text={form?.message} isError={form.isError} testId="login-status" />
     </form>
   );
