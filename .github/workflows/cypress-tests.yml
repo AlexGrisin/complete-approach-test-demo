@@ -9,4 +9,4 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
-          component: true
+          test: yarn storefront:cy-test

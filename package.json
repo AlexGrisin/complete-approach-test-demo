@@ -9,6 +9,7 @@
     "storefront:build": "yarn workspace storefront build",
     "storefront:lighthouse": "yarn workspace storefront lighthouse",
     "storefront:cy-test": "yarn workspace storefront cypress",
+    "storybook:build": "yarn workspace storefront storybook-build",
     "storybook:test": "yarn workspace storefront storybook-test",
     "backend:start": "yarn workspace backend start"
   },
