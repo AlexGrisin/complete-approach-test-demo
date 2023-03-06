@@ -1,11 +1,11 @@
 function validateCredentials(credentials) {
   if (!credentials || !credentials.user || !credentials.password) {
-    return 404;
+    return { statusCode: 404, statusMessage: 'Login failed: missing credentials' };
   }
   if (credentials.user.includes('invalid') || credentials.password.includes('invalid')) {
-    return 400;
+    return { statusCode: 400, statusMessage: 'Login failed: bad credentials' };
   }
-  return 200;
+  return { statusCode: 200, statusMessage: 'Login success' };
 }
 
 module.exports = { validateCredentials };
