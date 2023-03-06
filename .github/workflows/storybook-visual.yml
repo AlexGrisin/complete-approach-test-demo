@@ -6,14 +6,17 @@ on:
 jobs:
   storybook-visual:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./storefront
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
         with:
           node-version: '16.x'
       - name: Install dependencies
-        run: npm install
+        run: yarn
       - name: Build Storybook
-        run: npm run storybook-build --quiet
+        run: yarn run storybook-build --quiet
       - name: Percy Test
-        run: npm run storybook-visual
+        run: yarn run storybook-visual
