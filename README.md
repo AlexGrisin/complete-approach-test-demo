@@ -1,6 +1,23 @@
-# Test pyramid
+# Covering All Bases: Comprehensive Web Application Testing through a Complete Approach
 
-The purpose of this project is to demo the automation tools for the comprehensive web application testing
+The purpose of this project is to demo the automation tools for the comprehensive web application testing:
+
+- Unit
+  [storybook tests](https://storybook.js.org/docs/react/writing-tests/interaction-testing)
+  [cypress component tests](https://docs.cypress.io/guides/component-testing/overview)
+- Integration
+  test framework (cypress, playwright) + [mock](https://www.mocks-server.org/docs/overview/)
+- System/E2E
+  test framework (cypress, playwright)
+
+- Non-functional
+  [lighthouse audit](https://github.com/GoogleChrome/lighthouse-ci) + LHCI server for trends
+  [accessibility with axe/storybook](https://storybook.js.org/docs/react/writing-tests/accessibility-testing)
+
+- Visual
+  [component with storybook/percy](https://docs.percy.io/docs/storybook)
+  [e2e with test framework](https://playwright.dev/docs/test-snapshots)
+  [e2e with test framework/percy](https://docs.percy.io/docs/playwright)
 
 ## Web application under test
 
