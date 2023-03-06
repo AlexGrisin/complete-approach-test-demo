@@ -11,7 +11,19 @@ export const LoginForm = () => {
     if (!name || !password) {
       setForm({ message: 'Login error!', isError: true });
     } else {
-      setForm({ message: 'Login success!', isError: false });
+      fetch(`${process.env.REACT_APP_API_SERVER}/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ user: name, password: password }),
+      })
+        .then(res => res.json())
+        .then(
+          result =>
+            setForm({ message: result.statusMessage, isError: !(result.statusCode === 200) }),
+          error => setForm({ message: `something went wrong: ${error}`, isError: true })
+        );
     }
     e.preventDefault();
   };
