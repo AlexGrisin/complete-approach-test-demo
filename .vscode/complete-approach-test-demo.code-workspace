@@ -5,8 +5,8 @@
       "path": "../"
     },
     {
-      "name": "restapi",
-      "path": "../restapi"
+      "name": "backend",
+      "path": "../backend"
     },
     {
       "name": "storefront",
