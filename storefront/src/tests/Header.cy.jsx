@@ -5,6 +5,7 @@ const user = {
   firstName: 'Test',
   lastName: 'User',
 };
+
 describe('<Header />', () => {
   it('shows logged in user', () => {
     cy.mount(<Header user={user} />);
