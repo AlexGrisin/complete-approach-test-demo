@@ -4,7 +4,7 @@ import { within, userEvent } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
 
 export default {
-  title: 'LoginApp/LoginForm',
+  title: 'DemoApp/LoginForm',
   component: LoginForm,
 };
 
@@ -26,7 +26,6 @@ export const EmptyForm = Template.bind({});
 EmptyForm.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
   await userEvent.type(canvas.getByTestId('login'), 'email@provider.com');
-  await userEvent.type(canvas.getByTestId('password'), '');
   await userEvent.click(canvas.getByTestId('submit'));
 
   await expect(canvas.getByTestId('login-status').textContent).toContain('error');

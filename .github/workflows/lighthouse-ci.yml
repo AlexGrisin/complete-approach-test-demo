@@ -8,8 +8,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16
-      - run: npm install
-      - run: npm run build
-      - run: npm run lighthouse
+      - run: yarn
+      - run: yarn storefront:build
+      - run: yarn storefront:lighthouse
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

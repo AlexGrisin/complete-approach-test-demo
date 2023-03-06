@@ -1,0 +1,40 @@
+{
+  "folders": [
+    {
+      "name": "root",
+      "path": "../"
+    },
+    {
+      "name": "backend",
+      "path": "../backend"
+    },
+    {
+      "name": "storefront",
+      "path": "../storefront"
+    }
+  ],
+  "settings": {
+    // Exclude project folders inside the root directory in workspace
+    "files.exclude": {
+      "restapi": true,
+      "storefront": true
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "cSpell.words": ["mochawesome"]
+  },
+  "extensions": {
+    "recommendations": [
+      "esbenp.prettier-vscode",
+      "streetsidesoftware.code-spell-checker",
+      "ms-playwright.playwright",
+      "shelex.vscode-cy-helper"
+    ]
+  }
+}
