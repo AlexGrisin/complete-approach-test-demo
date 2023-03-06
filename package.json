@@ -5,7 +5,12 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "storefront:start": "yarn workspace storefront start"
+    "storefront:start": "yarn workspace storefront start",
+    "storefront:build": "yarn workspace storefront build",
+    "storefront:lighthouse": "yarn workspace storefront lighthouse",
+    "storefront:cy-test": "yarn workspace storefront cypress",
+    "storybook:test": "yarn workspace storefront storybook-test",
+    "backend:start": "yarn workspace backend start"
   },
   "repository": {
     "type": "git",
@@ -19,6 +24,6 @@
   "homepage": "https://github.com/AlexGrisin/component-test-demo-app#readme",
   "workspaces": [
     "storefront",
-    "restapi"
+    "backend"
   ]
 }
