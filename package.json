@@ -11,6 +11,7 @@
     "storefront:cy-test": "yarn workspace storefront cypress",
     "storybook:build": "yarn workspace storefront storybook-build",
     "storybook:test": "yarn workspace storefront storybook-test",
+    "storybook:start": "yarn workspace storefront storybook",
     "backend:start": "yarn workspace backend start",
     "backend:test": "yarn workspace backend test"
   },

@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { LoginForm } from './components/LoginForm';
 import reportWebVitals from './reportWebVitals';
+import { handleLogin } from './utilities/restApi';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <LoginForm />
+    <LoginForm handleLogin={handleLogin} />
   </React.StrictMode>
 );
 
