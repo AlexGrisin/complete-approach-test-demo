@@ -11,7 +11,8 @@
     "storefront:cy-test": "yarn workspace storefront cypress",
     "storybook:build": "yarn workspace storefront storybook-build",
     "storybook:test": "yarn workspace storefront storybook-test",
-    "backend:start": "yarn workspace backend start"
+    "backend:start": "yarn workspace backend start",
+    "backend:test": "yarn workspace backend test"
   },
   "repository": {
     "type": "git",
