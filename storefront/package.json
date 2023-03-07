@@ -77,6 +77,7 @@
     "cypress": "^12.7.0",
     "prettier": "^2.8.4",
     "prop-types": "^15.8.1",
+    "storybook-addon-fetch-mock": "^1.0.1",
     "webpack": "^5.75.0"
   }
 }

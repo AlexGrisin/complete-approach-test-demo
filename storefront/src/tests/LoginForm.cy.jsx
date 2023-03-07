@@ -3,6 +3,7 @@ import { LoginForm } from '../components/LoginForm';
 
 describe('<LoginForm />', () => {
   it('successfully logs in', () => {
+    cy.mockSuccessfulLoginResponse();
     cy.mount(<LoginForm />);
     cy.getByTestId('login').type('username');
     cy.getByTestId('password').type('password');

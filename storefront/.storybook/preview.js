@@ -13,5 +13,11 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  features: {
+    interactionsDebugger: true,
+  },
   actions: { argTypesRegex: '^on.*' },
+  fetchMock: {
+    debug: true,
+  },
 };
