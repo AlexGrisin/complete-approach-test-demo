@@ -1,11 +1,9 @@
-import React from 'react';
 import './input.css';
 
-export const Input = ({ labelName, type, value, testId, handleOnChange }) => {
-  return (
-    <label className={'input-label'}>
-      {labelName}
-      <input type={type} name="name" value={value} data-testid={testId} onChange={handleOnChange} />
-    </label>
-  );
-};
+// The following component is an example of your existing Input Component
+export const Input = ({ type, label, testId, register, required }) => (
+  <label className={'input-label'}>
+    {label}
+    <input type={type} data-testid={testId} {...register(label, { required })} />
+  </label>
+);

@@ -52,6 +52,7 @@
     "dotenv": "^16.0.3",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-hook-form": "^7.43.5",
     "react-scripts": "5.0.1",
     "storybook-addon-playwright": "^4.13.11",
     "web-vitals": "^2.1.4"
