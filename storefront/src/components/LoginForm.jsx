@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Input } from './Input';
 import { TextField } from './TextField';
 
-export const LoginForm = ({ handleLogin }) => {
+export const LoginForm = () => {
   const [form, setForm] = useState({ message: 'aa', isError: false });
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
@@ -13,9 +13,21 @@ export const LoginForm = ({ handleLogin }) => {
       if (!userName || !password) {
         setForm({ statusMessage: 'Login error!', isError: true });
       } else {
-        setForm({ statusMessage: 'Login success!', isError: false });
-        // const result = await handleLogin(userName, password);
-        // setForm(result);
+        fetch(`${process.env.REACT_APP_API_SERVER}/login`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ user: userName, password: password }),
+        })
+          .then(response => response.json())
+          .then(result =>
+            setForm({ statusMessage: result.statusMessage, isError: !(result.statusCode === 200) })
+          )
+          .catch(error => {
+            console.log(error);
+            setForm({ statusMessage: 'Login error!', isError: true });
+          });
       }
     }
     isLoggedIn();

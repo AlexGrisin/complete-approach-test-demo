@@ -27,3 +27,13 @@
 Cypress.Commands.add('getByTestId', testId => {
   return cy.get(`[data-testid="${testId}"]`);
 });
+
+Cypress.Commands.add('mockSuccessfulLoginResponse', () => {
+  cy.intercept('POST', 'http://localhost:3001/login', {
+    statusCode: 200,
+    body: {
+      statusCode: 200,
+      statusMessage: 'Login success',
+    },
+  });
+});
