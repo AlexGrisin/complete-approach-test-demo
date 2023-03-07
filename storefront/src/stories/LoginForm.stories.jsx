@@ -14,8 +14,8 @@ export default {
             url: 'http://localhost:3001/login',
           },
           response: {
-            status: 400,
-            body: { statusCode: 400, statusMessage: 'Login success' },
+            status: 200,
+            body: { statusCode: 200, statusMessage: 'Login success' },
             headers: {
               'Content-Type': 'application/json',
             },
@@ -37,7 +37,7 @@ FilledForm.play = async ({ canvasElement }) => {
   await userEvent.type(canvas.getByTestId('password'), 'a-random-password');
   await userEvent.click(canvas.getByTestId('submit'));
 
-  await expect(canvas.getByTestId('login-status')).toHaveClass('text-field--error');
+  await expect(canvas.getByTestId('login-status')).toHaveClass('text-field--success');
 };
 
 export const NoUserForm = Template.bind({});
