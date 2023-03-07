@@ -10,6 +10,19 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  parameters: {
+    a11y: {
+      config: {
+        rules: [
+          // {
+          //   id: 'color-contrast',
+          //   enabled: false,
+          // },
+        ],
+      },
+      options: {},
+    },
+  },
 };
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
