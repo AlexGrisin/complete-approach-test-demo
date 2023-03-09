@@ -17,6 +17,7 @@
     // Exclude project folders inside the root directory in workspace
     "files.exclude": {
       "restapi": true,
+      "backend": true,
       "storefront": true
     },
     "[javascript]": {

@@ -50,7 +50,7 @@ In the project directory we use a react login application. you can run:
 ### Start Web application
 
 ```shell
-npm start
+yarn storefront:start
 ```
 
 Runs the app in the development mode.\
@@ -62,7 +62,7 @@ You may also see any lint errors in the console.
 ### Build Web application
 
 ```shell
-npm run build
+yarn storefront:build
 ```
 
 Builds the app for production to the `build` folder.\
