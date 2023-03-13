@@ -15,7 +15,11 @@ export default {
           },
           response: {
             status: 200,
-            body: { statusCode: 200, statusMessage: 'Login success' },
+            body: {
+              statusCode: 200,
+              statusMessage: 'Login success',
+              user: { firstName: 'first', lastName: 'last' },
+            },
             headers: {
               'Content-Type': 'application/json',
             },
