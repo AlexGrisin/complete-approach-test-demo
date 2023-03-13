@@ -13,7 +13,10 @@ app.get('/', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-  const status = validateCredentials(req.body);
+  const status = {
+    ...validateCredentials(req.body),
+    user: { firstName: 'testfirst', lastName: 'testlast' },
+  };
   res.status(status.statusCode);
   res.send(status);
 });

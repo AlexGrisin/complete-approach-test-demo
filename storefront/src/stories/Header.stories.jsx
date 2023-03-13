@@ -30,7 +30,9 @@ LoggedIn.play = async ({ canvasElement }) => {
 };
 
 export const LoggedOut = Template.bind({});
-LoggedOut.args = {};
+LoggedOut.args = {
+  user: {},
+};
 LoggedOut.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
   expect(canvas.getByTestId('login-button')).toBeInTheDocument();
