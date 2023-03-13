@@ -23,7 +23,6 @@ export const LoginForm = props => {
         })
           .then(response => response.json())
           .then(result => {
-            console.log(result);
             setForm({
               statusMessage: result.statusMessage,
               isError: !(result.statusCode === 200),

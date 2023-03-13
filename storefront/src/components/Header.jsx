@@ -5,7 +5,6 @@ import { Button } from './Button';
 import './header.css';
 
 export const Header = ({ user }) => {
-  console.log('user', user);
   return (
     <header>
       <div className="wrapper">
@@ -29,7 +28,7 @@ export const Header = ({ user }) => {
           <h1>Demo</h1>
         </div>
         <div>
-          {Object.keys(user).length > 0 ? (
+          {user && Object.keys(user).length > 0 ? (
             <>
               <span className="welcome" data-testid="welcome-message">
                 Welcome, <b>{user.firstName}</b>!
