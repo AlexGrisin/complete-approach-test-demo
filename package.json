@@ -14,6 +14,7 @@
     "storybook:start": "yarn workspace storefront storybook",
     "backend:start": "yarn workspace backend start",
     "backend:test": "yarn workspace backend test",
+    "e2e:test": "yarn workspace e2e test",
     "prettier": "prettier --write ."
   },
   "repository": {
@@ -28,6 +29,7 @@
   "homepage": "https://github.com/AlexGrisin/component-test-demo-app#readme",
   "workspaces": [
     "storefront",
-    "backend"
+    "backend",
+    "e2e"
   ]
 }

@@ -7,9 +7,9 @@ on:
 jobs:
   playwright-e2e-tests:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./e2e
+    # defaults:
+    #   run:
+    #     working-directory: ./e2e
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js 14.x
@@ -21,4 +21,4 @@ jobs:
           yarn install
       - name: test
         run: |
-          yarn test
+          yarn e2e:test
