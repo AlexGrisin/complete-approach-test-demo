@@ -4,6 +4,15 @@ const { AccountPage } = require('../pages/AccountPage');
 const { LoginPage } = require('../pages/LoginPage');
 
 test('should log in', async ({ page }) => {
+  await page.route('http://localhost:3001/login', async route => {
+    const json = {
+      statusCode: 200,
+      statusMessage: 'Login success',
+      user: { firstName: 'testfirst', lastName: 'testlast' },
+    };
+    await route.fulfill({ json });
+  });
+
   const loginPage = new LoginPage(page);
   await loginPage.goto();
   await loginPage.userLogin('test', 'password');
@@ -21,6 +30,15 @@ test('should see log in error on missing credentials', async ({ page }) => {
 });
 
 test('should see log in error on invalid credentials', async ({ page }) => {
+  await page.route('http://localhost:3001/login', async route => {
+    const json = {
+      statusCode: 400,
+      statusMessage: 'Login failed: bad credentials',
+      user: {},
+    };
+    await route.fulfill({ json });
+  });
+
   const loginPage = new LoginPage(page);
   await loginPage.goto();
   await loginPage.userLogin('invalid', 'password');
