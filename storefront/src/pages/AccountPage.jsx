@@ -8,7 +8,7 @@ export const AccountPage = () => {
   return (
     <>
       <Header user={user} />
-      <div>Greetings, {user?.firstName}</div>
+      <div data-testid="account-welcome-message">Greetings, {user?.firstName}</div>
     </>
   );
 };

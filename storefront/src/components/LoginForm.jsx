@@ -27,12 +27,15 @@ export const LoginForm = () => {
         })
           .then(response => response.json())
           .then(result => {
+            const isError = !(result.statusCode === 200);
             setForm({
               statusMessage: result.statusMessage,
-              isError: !(result.statusCode === 200),
+              isError: isError,
             });
-            setUser(result.user);
-            navigate('/account');
+            if (!isError) {
+              setUser(result.user);
+              navigate('/account');
+            }
           })
           .catch(error => {
             console.log(error);
