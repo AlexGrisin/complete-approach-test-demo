@@ -4,7 +4,8 @@
   display: block;
 }
 
-input[type=text], [type=password] {
+input[type='text'],
+[type='password'] {
   width: 100%;
   padding: 8px 20px;
   margin: 8px 0;
@@ -14,7 +15,7 @@ input[type=text], [type=password] {
   box-sizing: border-box;
 }
 
-input[type=submit] {
+input[type='submit'] {
   width: 100%;
   background-color: #327134;
   color: white;
@@ -25,6 +26,6 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+input[type='submit']:hover {
   background-color: #45a049;
 }

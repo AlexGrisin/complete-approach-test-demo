@@ -1,1 +1,3 @@
-node_modules.lighthouseci;
+node_modules
+storefront/.lighthouseci
+storefront/storybook-static

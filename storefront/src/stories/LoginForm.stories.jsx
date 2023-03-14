@@ -30,7 +30,7 @@ export default {
     },
   },
   decorators: [
-    (Story) => (
+    Story => (
       <MemoryRouter initialEntries={['/']}>
         <Story />
       </MemoryRouter>

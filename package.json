@@ -13,7 +13,8 @@
     "storybook:test": "yarn workspace storefront storybook-test",
     "storybook:start": "yarn workspace storefront storybook",
     "backend:start": "yarn workspace backend start",
-    "backend:test": "yarn workspace backend test"
+    "backend:test": "yarn workspace backend test",
+    "prettier": "prettier --write ."
   },
   "repository": {
     "type": "git",
