@@ -1,3 +1,6 @@
+import { mount } from 'cypress/react';
+import { MemoryRouter } from 'react-router-dom';
+
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -36,4 +39,12 @@ Cypress.Commands.add('mockSuccessfulLoginResponse', () => {
       statusMessage: 'Login success',
     },
   });
+});
+
+Cypress.Commands.add('mountWithRouter', (component, options = {}) => {
+  const { routerProps = { initialEntries: ['/'] }, ...mountOptions } = options;
+
+  const wrapped = <MemoryRouter {...routerProps}>{component}</MemoryRouter>;
+
+  return mount(wrapped, mountOptions);
 });

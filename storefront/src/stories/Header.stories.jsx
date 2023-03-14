@@ -2,6 +2,12 @@ import React from 'react';
 import { Header } from '../components/Header';
 import { within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
+import { UserContextProvider } from '../context/UserContext';
+
+const user = {
+  firstName: 'Test',
+  lastName: 'User',
+};
 
 export default {
   title: 'DemoApp/Header',
@@ -12,12 +18,13 @@ export default {
   },
 };
 
-const user = {
-  firstName: 'Test',
-  lastName: 'User',
+const Template = args => {
+  return (
+    <UserContextProvider userDetails={args.user}>
+      <Header />
+    </UserContextProvider>
+  );
 };
-
-const Template = args => <Header {...args} />;
 
 export const LoggedIn = Template.bind({});
 LoggedIn.args = {
@@ -30,7 +37,9 @@ LoggedIn.play = async ({ canvasElement }) => {
 };
 
 export const LoggedOut = Template.bind({});
-LoggedOut.args = {};
+LoggedOut.args = {
+  user: {},
+};
 LoggedOut.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
   expect(canvas.getByTestId('login-button')).toBeInTheDocument();

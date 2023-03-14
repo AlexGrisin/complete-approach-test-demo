@@ -1,5 +1,6 @@
 import React from 'react';
 import { Header } from '../components/Header';
+import { UserContextProvider } from '../context/UserContext';
 
 const user = {
   firstName: 'Test',
@@ -8,7 +9,11 @@ const user = {
 
 describe('<Header />', () => {
   it('shows logged in user', () => {
-    cy.mount(<Header user={user} />);
+    cy.mount(
+      <UserContextProvider userDetails={user}>
+        <Header />
+      </UserContextProvider>
+    );
     cy.getByTestId('welcome-message').should('contain', user.firstName);
     cy.getByTestId('logout-button').should('exist');
   });

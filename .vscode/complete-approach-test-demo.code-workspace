@@ -11,6 +11,10 @@
     {
       "name": "storefront",
       "path": "../storefront"
+    },
+    {
+      "name": "e2e",
+      "path": "../e2e"
     }
   ],
   "settings": {
@@ -18,7 +22,8 @@
     "files.exclude": {
       "restapi": true,
       "backend": true,
-      "storefront": true
+      "storefront": true,
+      "e2e": true
     },
     "[javascript]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode",

@@ -4,7 +4,7 @@ import { LoginForm } from '../components/LoginForm';
 describe('<LoginForm />', () => {
   it('successfully logs in', () => {
     cy.mockSuccessfulLoginResponse();
-    cy.mount(<LoginForm />);
+    cy.mountWithRouter(<LoginForm />);
     cy.getByTestId('login').type('username');
     cy.getByTestId('password').type('password');
     cy.getByTestId('submit').click();
@@ -12,7 +12,7 @@ describe('<LoginForm />', () => {
   });
 
   it('fails to log in', () => {
-    cy.mount(<LoginForm />);
+    cy.mountWithRouter(<LoginForm />);
     cy.getByTestId('login').type('username');
     cy.getByTestId('submit').click();
     cy.getByTestId('login-status').should('contain', 'error');

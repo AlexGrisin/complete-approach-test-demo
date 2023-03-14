@@ -1,8 +1,23 @@
+import React from 'react';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { UserContextProvider } from './context/UserContext';
+import { AccountPage } from './pages/AccountPage';
+import { LoginPage } from './pages/LoginPage';
+
 function App() {
+  const user = {};
+
   return (
-    <div className="App">
-      <h1>Hello World!</h1>
-    </div>
+    <UserContextProvider userDetails={user}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/account" element={<AccountPage />} />
+        </Routes>
+      </BrowserRouter>
+    </UserContextProvider>
   );
 }
 
