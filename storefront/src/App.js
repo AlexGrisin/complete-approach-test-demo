@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { UserContext, UserContextProvider } from './context/UserContext';
+import { UserContextProvider } from './context/UserContext';
 import { AccountPage } from './pages/AccountPage';
 import { LoginPage } from './pages/LoginPage';
 
