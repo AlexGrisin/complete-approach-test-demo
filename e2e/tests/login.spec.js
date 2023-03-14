@@ -1,17 +1,11 @@
 // @ts-check
 const { test, expect } = require('@playwright/test');
+const { successLoginMock, invalidCredentialsLoginMock } = require('../mocks/userMock');
 const { AccountPage } = require('../pages/AccountPage');
 const { LoginPage } = require('../pages/LoginPage');
 
 test('should log in', async ({ page }) => {
-  await page.route('http://localhost:3001/login', async route => {
-    const json = {
-      statusCode: 200,
-      statusMessage: 'Login success',
-      user: { firstName: 'testfirst', lastName: 'testlast' },
-    };
-    await route.fulfill({ json });
-  });
+  await successLoginMock(page);
 
   const loginPage = new LoginPage(page);
   await loginPage.goto();
@@ -30,14 +24,7 @@ test('should see log in error on missing credentials', async ({ page }) => {
 });
 
 test('should see log in error on invalid credentials', async ({ page }) => {
-  await page.route('http://localhost:3001/login', async route => {
-    const json = {
-      statusCode: 400,
-      statusMessage: 'Login failed: bad credentials',
-      user: {},
-    };
-    await route.fulfill({ json });
-  });
+  await invalidCredentialsLoginMock(page);
 
   const loginPage = new LoginPage(page);
   await loginPage.goto();
