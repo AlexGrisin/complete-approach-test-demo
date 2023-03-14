@@ -2,6 +2,7 @@ import React from 'react';
 import { LoginForm } from '../components/LoginForm';
 import { within, userEvent } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
+import { MemoryRouter } from 'react-router';
 
 export default {
   title: 'DemoApp/LoginForm',
@@ -28,6 +29,13 @@ export default {
       ],
     },
   },
+  decorators: [
+    (Story) => (
+      <MemoryRouter initialEntries={['/']}>
+        <Story />
+      </MemoryRouter>
+    ),
+  ],
 };
 
 const Template = args => <LoginForm {...args} />;

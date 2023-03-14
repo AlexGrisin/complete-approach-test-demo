@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 
 import { Button } from './Button';
 import './header.css';
+import { UserContext } from '../context/UserContext';
 
-export const Header = ({ user }) => {
+export const Header = () => {
+  const { user } = useContext(UserContext);
+  console.log(user)
+
   return (
     <header>
       <div className="wrapper">

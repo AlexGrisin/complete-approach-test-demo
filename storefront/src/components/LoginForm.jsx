@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Input } from './Input';
 import { TextField } from './TextField';
 import './form.css';
+import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../context/UserContext';
 
-export const LoginForm = props => {
+export const LoginForm = () => {
   const [form, setForm] = useState({ message: '', isError: false });
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  const { setUser } = useContext(UserContext);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -27,7 +31,8 @@ export const LoginForm = props => {
               statusMessage: result.statusMessage,
               isError: !(result.statusCode === 200),
             });
-            props.handleLogin(result.user);
+            setUser(result.user);
+            navigate('/account');
           })
           .catch(error => {
             console.log(error);
@@ -45,7 +50,8 @@ export const LoginForm = props => {
   const handlePasswordChange = e => {
     setPassword(e.target.value);
   };
-  return Object.keys(props.user).length === 0 || props.user?.firstName === undefined ? (
+
+  return (
     <form onSubmit={handleSubmit}>
       <Input
         labelName="Login:"
@@ -64,13 +70,5 @@ export const LoginForm = props => {
       <Input type="submit" value="Submit" testId="submit" />
       <TextField text={form?.statusMessage} isError={form.isError} testId="login-status" />
     </form>
-  ) : (
-    <div>Greetings, {props.user.firstName}</div>
   );
-};
-
-LoginForm.defaultProps = {
-  handleLogin: () => console.log(),
-  user: {},
-  form: { message: '', isError: false },
 };

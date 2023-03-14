@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Header } from '../components/Header';
 import { within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
+import { UserContext } from '../context/UserContext';
+
+const user = {
+  firstName: 'Test',
+  lastName: 'User',
+};
 
 export default {
   title: 'DemoApp/Header',
@@ -12,12 +18,15 @@ export default {
   },
 };
 
-const user = {
-  firstName: 'Test',
-  lastName: 'User',
+const Template = args => {
+  const [user, setUser] = useState(args.user);
+  const value = { user, setUser };
+  return (
+    <UserContext.Provider value={value}>
+      <Header />
+    </UserContext.Provider>
+  );
 };
-
-const Template = args => <Header {...args} />;
 
 export const LoggedIn = Template.bind({});
 LoggedIn.args = {
