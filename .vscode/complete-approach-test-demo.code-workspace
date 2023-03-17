@@ -13,8 +13,12 @@
       "path": "../storefront"
     },
     {
-      "name": "e2e",
-      "path": "../e2e"
+      "name": "playwright-e2e",
+      "path": "../playwright-e2e"
+    },
+    {
+      "name": "cypress-e2e",
+      "path": "../cypress-e2e"
     }
   ],
   "settings": {
@@ -23,7 +27,8 @@
       "restapi": true,
       "backend": true,
       "storefront": true,
-      "e2e": true
+      "playwright-e2e": true,
+      "cypress-e2e": true
     },
     "[javascript]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode",

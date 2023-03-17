@@ -14,7 +14,8 @@
     "storybook:start": "yarn workspace storefront storybook",
     "backend:start": "yarn workspace backend start",
     "backend:test": "yarn workspace backend test",
-    "e2e:test": "yarn workspace e2e test",
+    "playwright-e2e:test": "yarn workspace playwright-e2e test",
+    "cypress-e2e:test": "yarn workspace cypress-e2e test",
     "prettier": "prettier --write ."
   },
   "repository": {
@@ -30,6 +31,7 @@
   "workspaces": [
     "storefront",
     "backend",
-    "e2e"
+    "playwright-e2e",
+    "cypress-e2e"
   ]
 }

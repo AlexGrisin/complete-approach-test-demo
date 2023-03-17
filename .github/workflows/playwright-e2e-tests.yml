@@ -18,4 +18,4 @@ jobs:
           yarn install
       - name: test
         run: |
-          yarn e2e:test
+          yarn playwright-e2e:test
