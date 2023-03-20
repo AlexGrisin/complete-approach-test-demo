@@ -13,7 +13,10 @@
     "storybook:test": "yarn workspace storefront storybook-test",
     "storybook:start": "yarn workspace storefront storybook",
     "backend:start": "yarn workspace backend start",
-    "backend:test": "yarn workspace backend test"
+    "backend:test": "yarn workspace backend test",
+    "playwright-e2e:test": "yarn workspace playwright-e2e test",
+    "cypress-e2e:test": "yarn workspace cypress-e2e test",
+    "prettier": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -27,6 +30,8 @@
   "homepage": "https://github.com/AlexGrisin/component-test-demo-app#readme",
   "workspaces": [
     "storefront",
-    "backend"
+    "backend",
+    "playwright-e2e",
+    "cypress-e2e"
   ]
 }

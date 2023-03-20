@@ -1,7 +1,7 @@
-name: 'Cypress Tests'
+name: 'Cypress Component Tests'
 on: push
 jobs:
-  cypress-tests:
+  cypress-component-tests:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

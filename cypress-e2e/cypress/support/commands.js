@@ -1,6 +1,3 @@
-import { mount } from 'cypress/react';
-import { MemoryRouter } from 'react-router-dom';
-
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -31,6 +28,16 @@ Cypress.Commands.add('getByTestId', testId => {
   return cy.get(`[data-testid="${testId}"]`);
 });
 
+Cypress.Commands.add('userLogin', (userName, password) => {
+  if (userName) {
+    cy.getByTestId('login').type(userName);
+  }
+  if (password) {
+    cy.getByTestId('password').type(password);
+  }
+  cy.getByTestId('submit').click();
+});
+
 Cypress.Commands.add('mockSuccessfulLoginResponse', () => {
   cy.intercept('POST', 'http://localhost:3001/login', {
     statusCode: 200,
@@ -41,10 +48,23 @@ Cypress.Commands.add('mockSuccessfulLoginResponse', () => {
   });
 });
 
-Cypress.Commands.add('mountWithRouter', (component, options = {}) => {
-  const { routerProps = { initialEntries: ['/'] }, ...mountOptions } = options;
+Cypress.Commands.add('mockSuccessfulLoginResponse', () => {
+  cy.intercept('POST', 'http://localhost:3001/login', {
+    statusCode: 200,
+    body: {
+      statusCode: 200,
+      statusMessage: 'Login success',
+    },
+  });
+});
 
-  const wrapped = <MemoryRouter {...routerProps}>{component}</MemoryRouter>;
-
-  return mount(wrapped, mountOptions);
+Cypress.Commands.add('invalidCredentialsLoginMock', () => {
+  cy.intercept('POST', 'http://localhost:3001/login', {
+    statusCode: 400,
+    body: {
+      statusCode: 400,
+      statusMessage: 'Login failed: bad credentials',
+      user: {},
+    },
+  });
 });

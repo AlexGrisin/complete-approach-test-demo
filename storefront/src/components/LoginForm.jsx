@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Input } from './Input';
 import { TextField } from './TextField';
+import './form.css';
+import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../context/UserContext';
 
 export const LoginForm = () => {
-  const [form, setForm] = useState({ message: 'aa', isError: false });
+  const [form, setForm] = useState({ message: '', isError: false });
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  const { setUser } = useContext(UserContext);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -21,9 +26,17 @@ export const LoginForm = () => {
           body: JSON.stringify({ user: userName, password: password }),
         })
           .then(response => response.json())
-          .then(result =>
-            setForm({ statusMessage: result.statusMessage, isError: !(result.statusCode === 200) })
-          )
+          .then(result => {
+            const isError = !(result.statusCode === 200);
+            setForm({
+              statusMessage: result.statusMessage,
+              isError: isError,
+            });
+            if (!isError) {
+              setUser(result.user);
+              navigate('/account');
+            }
+          })
           .catch(error => {
             console.log(error);
             setForm({ statusMessage: 'Login error!', isError: true });

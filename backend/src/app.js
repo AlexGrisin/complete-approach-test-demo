@@ -13,9 +13,9 @@ app.get('/', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-  const status = validateCredentials(req.body);
-  res.status(status.statusCode);
-  res.send(status);
+  const loginDetails = validateCredentials(req.body);
+  res.status(loginDetails.statusCode);
+  res.send(loginDetails);
 });
 
 module.exports = app;

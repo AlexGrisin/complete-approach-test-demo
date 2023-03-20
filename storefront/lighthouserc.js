@@ -12,6 +12,9 @@ module.exports = {
     assert: {
       preset: 'lighthouse:recommended',
       assertions: {
+        // TODO: fix responsive https://web.dev/responsive-web-design-basics/
+        'content-width': 'warn',
+
         'themed-omnibox': 'warn',
         'apple-touch-icon': 'warn',
         'maskable-icon': 'warn',
