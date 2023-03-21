@@ -10,7 +10,7 @@ describe('<RegistrationForm />', () => {
     cy.getByTestId('firstName').type('firstname');
     cy.getByTestId('lastName').type('lastname');
     cy.getByTestId('submit').click();
-    cy.getByTestId('login-status').should('contain', 'success');
+    cy.getByTestId('registration-status').should('contain', 'success');
   });
 
   it('failed registration', () => {
