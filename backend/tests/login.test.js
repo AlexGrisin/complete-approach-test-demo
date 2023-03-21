@@ -4,11 +4,11 @@ const app = require('../src/app');
 describe('Test login path', () => {
   test('it should return successful login', async () => {
     const response = await request(app).post('/login').send({
-      user: 'testUser',
+      user: 'test1@test.com',
       password: 'password',
     });
     expect(response.statusCode).toBe(200);
-    expect(response.body.user).toStrictEqual({ firstName: 'testfirst', lastName: 'testlast' });
+    expect(response.body.user).toStrictEqual({ firstName: 'First1', lastName: 'Last1' });
   });
 
   test('it should return invalid credentials', async () => {
