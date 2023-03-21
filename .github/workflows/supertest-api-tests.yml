@@ -1,5 +1,7 @@
 name: 'API Tests'
 on: push
+env:
+  NODE_ENV: test
 jobs:
   api-tests:
     runs-on: ubuntu-latest
