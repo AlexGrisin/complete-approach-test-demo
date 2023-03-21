@@ -41,6 +41,16 @@ Cypress.Commands.add('mockSuccessfulLoginResponse', () => {
   });
 });
 
+Cypress.Commands.add('mockSuccessfulRegistrationResponse', () => {
+  cy.intercept('POST', 'http://localhost:3001/create', {
+    statusCode: 200,
+    body: {
+      statusCode: 200,
+      statusMessage: 'Registration success',
+    },
+  });
+});
+
 Cypress.Commands.add('mountWithRouter', (component, options = {}) => {
   const { routerProps = { initialEntries: ['/'] }, ...mountOptions } = options;
 

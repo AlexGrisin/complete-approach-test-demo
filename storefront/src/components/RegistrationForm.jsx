@@ -82,18 +82,18 @@ export const RegistrationForm = () => {
         labelName="First name:"
         type="text"
         value={firstName}
-        testId="login"
+        testId="firstName"
         handleOnChange={handleFirstNameChange}
       />
       <Input
         labelName="Last name:"
         type="text"
         value={lastName}
-        testId="login"
+        testId="lastName"
         handleOnChange={handleLastNameChange}
       />
       <Input type="submit" value="Submit" testId="submit" />
-      <TextField text={form?.statusMessage} isError={form.isError} testId="login-status" />
+      <TextField text={form?.statusMessage} isError={form.isError} testId="registration-status" />
     </form>
   );
 };
