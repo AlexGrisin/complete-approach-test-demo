@@ -1,11 +1,11 @@
 const { getUserByUserName } = require('../server/queries/user');
 
 async function validateCredentials(credentials) {
-  if (!credentials || !credentials.user || !credentials.password) {
+  if (!credentials || !credentials.userName || !credentials.password) {
     return { statusCode: 404, statusMessage: 'Login failed: missing credentials', user: {} };
   }
 
-  const user = await getUserByUserName(credentials.user);
+  const user = await getUserByUserName(credentials.userName);
   if (!user || !checkUserPassword(user, credentials.password)) {
     return { statusCode: 400, statusMessage: 'Login failed: bad credentials', user: {} };
   }
