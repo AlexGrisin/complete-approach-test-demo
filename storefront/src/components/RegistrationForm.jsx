@@ -14,7 +14,6 @@ export const RegistrationForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log('Submitted!');
     async function submitRegistration() {
       if (!userName || !password || !firstName || !lastName) {
         setForm({ statusMessage: 'Registration error!', isError: true });
