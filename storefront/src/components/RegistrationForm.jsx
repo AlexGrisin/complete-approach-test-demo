@@ -1,29 +1,30 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { Input } from './Input';
 import { TextField } from './TextField';
 import './form.css';
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../context/UserContext';
 
-export const LoginForm = () => {
+export const RegistrationForm = () => {
   const [form, setForm] = useState({ message: '', isError: false });
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const navigate = useNavigate();
-  const { setUser } = useContext(UserContext);
 
   const handleSubmit = e => {
     e.preventDefault();
-    async function isLoggedIn() {
-      if (!userName || !password) {
-        setForm({ statusMessage: 'Login error!', isError: true });
+    console.log('Submitted!');
+    async function submitRegistration() {
+      if (!userName || !password || !firstName || !lastName) {
+        setForm({ statusMessage: 'Registration error!', isError: true });
       } else {
-        fetch(`${process.env.REACT_APP_API_SERVER}/login`, {
+        fetch(`${process.env.REACT_APP_API_SERVER}/create`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ userName, password }),
+          body: JSON.stringify({ userName, password, firstName, lastName }),
         })
           .then(response => response.json())
           .then(result => {
@@ -33,8 +34,8 @@ export const LoginForm = () => {
               isError: isError,
             });
             if (!isError) {
-              setUser(result.user);
-              navigate('/account');
+              console.log(result);
+              navigate('/success');
             }
           })
           .catch(error => {
@@ -43,15 +44,23 @@ export const LoginForm = () => {
           });
       }
     }
-    isLoggedIn();
+    submitRegistration();
   };
 
-  const handleNameChange = e => {
+  const handleUserNameChange = e => {
     setUserName(e.target.value.trim());
   };
 
   const handlePasswordChange = e => {
     setPassword(e.target.value);
+  };
+
+  const handleFirstNameChange = e => {
+    setFirstName(e.target.value.trim());
+  };
+
+  const handleLastNameChange = e => {
+    setLastName(e.target.value.trim());
   };
 
   return (
@@ -61,7 +70,7 @@ export const LoginForm = () => {
         type="text"
         value={userName}
         testId="login"
-        handleOnChange={handleNameChange}
+        handleOnChange={handleUserNameChange}
       />
       <Input
         labelName="Password:"
@@ -69,6 +78,20 @@ export const LoginForm = () => {
         value={password}
         testId="password"
         handleOnChange={handlePasswordChange}
+      />
+      <Input
+        labelName="First name:"
+        type="text"
+        value={firstName}
+        testId="login"
+        handleOnChange={handleFirstNameChange}
+      />
+      <Input
+        labelName="Last name:"
+        type="text"
+        value={lastName}
+        testId="login"
+        handleOnChange={handleLastNameChange}
       />
       <Input type="submit" value="Submit" testId="submit" />
       <TextField text={form?.statusMessage} isError={form.isError} testId="login-status" />

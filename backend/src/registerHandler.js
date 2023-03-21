@@ -2,7 +2,6 @@ const { createUser } = require('../server/mutations/user');
 const { getUserByUserName } = require('../server/queries/user');
 
 async function registerCustomer(userData) {
-  console.log('userData', userData);
   if (!userData || Object.keys(userData).length === 0) {
     return { statusCode: 400, statusMessage: 'User data is not provided' };
   }

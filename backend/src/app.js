@@ -21,7 +21,6 @@ app.post('/login', async (req, res) => {
 });
 
 app.post('/create', async (req, res) => {
-  console.log(req.body);
   const status = await registerCustomer(req.body);
   res.status(status.statusCode);
   res.send(status);

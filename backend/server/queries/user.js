@@ -2,17 +2,16 @@ const { connect, close } = require('../connection');
 const customers = require('../database');
 
 async function getUsers() {
-  let user = {};
+  let users = {};
   try {
     const db = await connect();
     const collection = db.collection('customers');
-    user = await collection.find({}).toArray();
-    console.log('Found documents =>', user);
+    users = await collection.find({}).toArray();
   } catch (e) {
     console.log(e);
     await close();
   }
-  return user;
+  return users;
 }
 
 async function getUserByUserName(userName) {
