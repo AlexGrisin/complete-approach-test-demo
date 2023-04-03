@@ -28,7 +28,7 @@ export const Header = () => {
               />
             </g>
           </svg>
-          <h1>Demo</h1>
+          <h1>Demo Application</h1>
         </div>
         <div>
           {user && Object.keys(user).length > 0 ? (
