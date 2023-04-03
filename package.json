@@ -16,7 +16,8 @@
     "backend:test": "yarn workspace backend test",
     "playwright-e2e:test": "yarn workspace playwright-e2e test",
     "cypress-e2e:test": "yarn workspace cypress-e2e test",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "postinstall": "yarn workspace playwright-e2e install"
   },
   "repository": {
     "type": "git",
