@@ -33,13 +33,13 @@ The purpose of this project is to demo the automation tools for the comprehensiv
 
 - [e2e with test framework](https://playwright.dev/docs/test-snapshots)
 
-## System/E2E
+## E2E Testing
 
-### System functional
+### E2E functional
 
 - test framework [playwright](https://playwright.dev/docs/intro)
 
-### System visual
+### E2E visual
 
 - [e2e with test framework/percy](https://docs.percy.io/docs/playwright)
 
