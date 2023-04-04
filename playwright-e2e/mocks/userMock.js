@@ -19,3 +19,23 @@ export async function invalidCredentialsLoginMock(page) {
     await route.fulfill({ json });
   });
 }
+
+export async function successRegistrationMock(page) {
+  await page.route('http://localhost:3001/create', async route => {
+    const json = {
+      statusCode: 200,
+      statusMessage: 'Registration success',
+    };
+    await route.fulfill({ json });
+  });
+}
+
+export async function duplicateRegistrationMock(page) {
+  await page.route('http://localhost:3001/create', async route => {
+    const json = {
+      statusCode: 400,
+      statusMessage: 'error: account already exists',
+    };
+    await route.fulfill({ json });
+  });
+}

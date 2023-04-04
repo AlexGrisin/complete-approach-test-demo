@@ -19,6 +19,10 @@
     {
       "name": "cypress-e2e",
       "path": "../cypress-e2e"
+    },
+    {
+      "name": "mockserver",
+      "path": "../mockserver"
     }
   ],
   "settings": {
@@ -28,7 +32,8 @@
       "backend": true,
       "storefront": true,
       "playwright-e2e": true,
-      "cypress-e2e": true
+      "cypress-e2e": true,
+      "mockserver": true
     },
     "[javascript]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode",

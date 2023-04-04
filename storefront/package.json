@@ -13,6 +13,7 @@
     "storybook": "start-storybook -p 6006 -s public",
     "storybook-build": "build-storybook -s public",
     "storybook-test": "test-storybook",
+    "storybook-test-coverage": "test-storybook --coverage",
     "storybook-visual": "percy storybook ./storybook-static"
   },
   "eslintConfig": {
@@ -60,8 +61,10 @@
   "devDependencies": {
     "@percy/cli": "^1.20.2",
     "@percy/storybook": "^4.3.5",
+    "@playwright/test": "^1.32.1",
     "@storybook/addon-a11y": "^6.5.16",
     "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-coverage": "^0.0.8",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
     "@storybook/addon-links": "^6.5.16",

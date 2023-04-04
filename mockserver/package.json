@@ -1,16 +1,15 @@
 {
-  "name": "playwright-e2e",
+  "name": "mockserver",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "private": true,
   "scripts": {
-    "test": "playwright test",
-    "install": "playwright install"
+    "mocks": "mocks-server"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.32.1"
+    "@mocks-server/main": "^4.0.0"
   }
 }
