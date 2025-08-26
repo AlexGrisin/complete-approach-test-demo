@@ -2,6 +2,15 @@ import React from 'react';
 import { LoginForm } from '../components/LoginForm';
 
 describe('<LoginForm />', () => {
+  beforeEach(() => {
+    window.process = {
+      env: {
+        REACT_APP_API_SERVER: 'http://localhost:3001',
+        // Add other env variables here as needed
+      },
+    };
+  });
+
   it('successfully logs in', () => {
     cy.mockSuccessfulLoginResponse();
     cy.mountWithRouter(<LoginForm />);

@@ -1,5 +1,8 @@
+import { initialize, mswLoader } from 'msw-storybook-addon';
+
+initialize();
+
 export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
   a11y: {
     config: {
       rules: [],
@@ -16,8 +19,6 @@ export const parameters = {
   features: {
     interactionsDebugger: true,
   },
-  actions: { argTypesRegex: '^on.*' },
-  fetchMock: {
-    debug: true,
-  },
 };
+export const loaders = [mswLoader];
+export const tags = ['autodocs'];

@@ -1,32 +1,15 @@
-import React from 'react';
 import { LoginForm } from '../components/LoginForm';
-import { within, userEvent } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { within, userEvent } from 'storybook/test';
+import { expect } from 'storybook/test';
 import { MemoryRouter } from 'react-router';
+import { loginHandlers } from './mswHandlers';
 
 export default {
   title: 'DemoApp/LoginForm',
   component: LoginForm,
   parameters: {
-    fetchMock: {
-      mocks: [
-        {
-          matcher: {
-            url: 'http://localhost:3001/login',
-          },
-          response: {
-            status: 200,
-            body: {
-              statusCode: 200,
-              statusMessage: 'Login success',
-              user: { firstName: 'first', lastName: 'last' },
-            },
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          },
-        },
-      ],
+    msw: {
+      handlers: loginHandlers,
     },
   },
   decorators: [

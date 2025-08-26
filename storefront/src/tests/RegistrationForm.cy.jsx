@@ -2,6 +2,15 @@ import React from 'react';
 import { RegistrationForm } from '../components/RegistrationForm';
 
 describe('<RegistrationForm />', () => {
+  beforeEach(() => {
+    window.process = {
+      env: {
+        REACT_APP_API_SERVER: 'http://localhost:3001',
+        // Add other env variables here as needed
+      },
+    };
+  });
+
   it('successful registration', () => {
     cy.mockSuccessfulRegistrationResponse();
     cy.mountWithRouter(<RegistrationForm />);
