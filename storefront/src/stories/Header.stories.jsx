@@ -1,7 +1,7 @@
 import React from 'react';
 import { Header } from '../components/Header';
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { within } from 'storybook/test';
+import { expect } from 'storybook/test';
 import { UserContextProvider } from '../context/UserContext';
 
 const user = {

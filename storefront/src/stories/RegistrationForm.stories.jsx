@@ -1,31 +1,15 @@
-import React from 'react';
 import { RegistrationForm } from '../components/RegistrationForm';
-import { within, userEvent } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { within, userEvent } from 'storybook/test';
+import { expect } from 'storybook/test';
 import { MemoryRouter } from 'react-router';
+import { registerHandlers } from './mswHandlers';
 
 export default {
   title: 'DemoApp/RegistrationForm',
   component: RegistrationForm,
   parameters: {
-    fetchMock: {
-      mocks: [
-        {
-          matcher: {
-            url: 'http://localhost:3001/create',
-          },
-          response: {
-            status: 200,
-            body: {
-              statusCode: 200,
-              statusMessage: 'success',
-            },
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          },
-        },
-      ],
+    msw: {
+      handlers: registerHandlers,
     },
   },
   decorators: [
